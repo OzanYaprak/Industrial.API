@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Industrial.API.Entity
 {
@@ -13,6 +14,7 @@ namespace Industrial.API.Entity
         public decimal ProductPrice { get; set; }
 
         public int CategoryID { get; set; }
+        [JsonIgnore]
         public Category Category { get; set; }
 
     }
