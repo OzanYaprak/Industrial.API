@@ -1,4 +1,8 @@
 
+using Industrial.API.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+
 namespace Industrial.API
 {
     public class Program
@@ -13,6 +17,12 @@ namespace Industrial.API
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+
+            //AUTOMAPPER LINE
+            builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            //SQL CONNECTION LINE
+            builder.Services.AddDbContext<IndustrialDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("SQLConnection")));
 
             var app = builder.Build();
 
