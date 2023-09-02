@@ -27,6 +27,7 @@ namespace Industrial.API
             builder.Services.AddDbContext<IndustrialDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("SQLConnection")));
             //CUSTOM 
             builder.Services.AddScoped<ICategoryService,CategoryService>();
+            builder.Services.AddScoped<IProductService,ProductService>();
 
             var app = builder.Build();
 

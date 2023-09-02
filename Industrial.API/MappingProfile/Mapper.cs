@@ -10,6 +10,9 @@ namespace Industrial.API.MappingProfile
         { 
             CreateMap<Category, CreateCategoryDTO>().ReverseMap();
             CreateMap<Category, EditCategoryDTO>().ReverseMap();
+
+            CreateMap<Product, CreateProductDTO>().ReverseMap();
+            CreateMap<Product, EditProductDTO>().ReverseMap();
         }
     }
 }
